@@ -152,7 +152,7 @@ semver_parse (const char *str, semver_t *ver) {
 
   res = semver_parse_version(buf, ver);
   free(buf);
-#if DEBUG > 0
+#if DEBUGGING > 0
   printf("[debug] semver.c %s = %d.%d.%d, %s %s\n", str, ver->major, ver->minor, ver->patch, ver->prerelease, ver->metadata);
 #endif
   return res;

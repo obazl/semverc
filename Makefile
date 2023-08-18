@@ -3,9 +3,9 @@ CFLAGS   = -std=c89 -Ideps -Wall -Wextra -pedantic -Wno-missing-field-initialize
 VALGRIND = valgrind
 RM       = rm -rf
 
-# Call make with DEBUG=anything to compile with debug flag and with extra output
-ifneq ($(DEBUG),)
-CFLAGS += -g -DDEBUG=1
+# Call make with DEBUGGING=anything to compile with debug flag and with extra output
+ifneq ($(DEBUGGING),)
+CFLAGS += -g -DDEBUGGING=1
 endif
 
 test: semver.c semver_test.c

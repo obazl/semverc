@@ -1,0 +1,14 @@
+cc_library(
+    name  = "semverc",
+    srcs  = ["//:semver.c", "//:semver.h"],
+    copts = [
+        "-x", "c",
+        "-O3",
+    ] + select({
+        "@platforms//os:linux": ["-std=gnu11"],
+        "//conditions:default": ["-std=c11"],
+    }),
+    linkstatic=1,
+    visibility = ["//visibility:public"]
+)
+

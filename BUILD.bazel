@@ -1,0 +1,1 @@
+exports_files(["semver.c", "semver.h"])
