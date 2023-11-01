@@ -1,0 +1,11 @@
+cc_library(
+    name  = "semverc",
+    srcs  = ["//:semver.c"],
+    hdrs  = ["//:semver.h"],
+    includes = ["."],
+    copts = ["-x", "c", "-std=c11"],
+    features = ["opt"],
+    linkstatic=1,
+    visibility = ["//visibility:public"]
+)
+
