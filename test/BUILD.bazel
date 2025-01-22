@@ -1,0 +1,35 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_test(
+    name  = "test",
+    srcs  = [
+        "semver_test.c",
+        "//lib:semver.h",
+    ],
+    copts = [
+        "-x", "c",
+        "-std=c11",
+        "-Ilib",
+    ],
+    deps = ["//lib:semverc"],
+    visibility = ["//visibility:public"],
+    timeout = "short"
+)
+
+# # broken build rule
+# cc_test(
+#     name  = "unit",
+#     srcs  = [
+#         "semver_unit.c",
+#     ],
+#     data = ["//lib:semver.c"],
+#     copts = [
+#         "-x", "c",
+#         "-std=c11",
+#         "-Ilib",
+#         "-I.",
+#         # "-I$(location semver.c)"
+#     ],
+#     visibility = ["//visibility:public"]
+# )
+

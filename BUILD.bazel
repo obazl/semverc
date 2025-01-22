@@ -1,1 +1,1 @@
-exports_files(["semver.c", "semver.h"])
+#exports_files(["semver.c", "semver.h"])
