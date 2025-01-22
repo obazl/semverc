@@ -1,7 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+exports_files(["semver.c", "semver.h"])
+
+filegroup(
+    name = "semverc_srcs",
+    srcs = ["semver.c", "semver.h"],
+    visibility = ["//test:__pkg__"]
+)
+
 cc_library(
     name  = "semverc",
-    srcs  = ["//:semver.c"],
-    hdrs  = ["//:semver.h"],
+    srcs  = ["semver.c"],
+    hdrs  = ["semver.h"],
     includes = ["."],
     copts = ["-x", "c", "-std=c11"],
     features = ["opt"],
